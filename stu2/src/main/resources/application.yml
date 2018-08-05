@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///stu
+    username: root
+    password: 123
+server:
+  port: 8080
