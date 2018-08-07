@@ -1,10 +1,14 @@
 package com.yu.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yu on 2018/8/4 23:03.
@@ -22,7 +26,11 @@ public class Subject {
     @Id
     @GeneratedValue
     private Integer subId;
+
     private String subName;
     private Integer deptNo;
+    @JsonIgnore
+    @OneToMany(targetEntity = Student.class,mappedBy = "department")
+    private Set<Student> students = new HashSet<>();
 
 }

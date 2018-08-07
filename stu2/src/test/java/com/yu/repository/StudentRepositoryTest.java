@@ -23,11 +23,11 @@ public class StudentRepositoryTest extends StuApplicationTests{
         Assert.assertTrue(studentList.size()>0);
     }
 
-    /*@Test
+    @Test
     public void testFindByStudentNo(){
         Student student = studentRepository.findByStudentNo(20180004);
-        Assert.assertEquals(new Integer(20180004),student.getStudentNo());
-    }*/
+        Assert.assertEquals("20180004",student.getStudentNo());
+    }
     @Test
     public void testupdate(){
     }

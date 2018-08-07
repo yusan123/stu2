@@ -1,7 +1,9 @@
 package com.yu.service.impl;
 
 import com.yu.StuApplicationTests;
+import com.yu.entity.Department;
 import com.yu.entity.Student;
+import com.yu.entity.Subject;
 import com.yu.enums.Sex;
 import com.yu.enums.StudentStatus;
 import org.junit.Assert;
@@ -36,13 +38,17 @@ public class StudentServiceImplTest extends StuApplicationTests{
     @Test
     public void save() throws Exception {
         Student student = new Student();
-        student.setStudentNo("11111111123");
-        student.setStudentAge(33);
-        student.setStudentName("李大娟");
-        student.setDeptNo(3);
+        student.setStudentNo("yu1111");
+        student.setStudentAge(331);
+        student.setStudentName("娟老啊");
+        Department department = new Department();
+        department.setDeptId(3);//工程建设学院
+        student.setDepartment(department);
         student.setStudentSex(Sex.FEMALE.getCode());
         student.setStudentStatus(StudentStatus.NORMAL.getCode());
-        student.setSubjectNo(2);
+        Subject subject = new Subject();
+        subject.setSubId(2);//信息系统与信息管理
+        student.setSubject(subject);
         //student.setStudentDate(new Date());
         Student student1 = studentService.save(student);
         Assert.assertNotNull(student1);

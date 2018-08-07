@@ -24,12 +24,23 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer studentId;
+    //学号
     private String studentNo;
+    //学生姓名
     private String studentName;
+    //性别 学生性别0表示男1表示女
     private Integer studentSex;
+    //年龄
     private Integer studentAge;
-    private Integer subjectNo;
-    private Integer deptNo;
+    //专业
+    @ManyToOne(targetEntity =Subject.class)
+    @JoinColumn(name="subject_no")
+    private Subject subject;
+    //学院
+    @ManyToOne(targetEntity = Department.class)
+    @JoinColumn(name="dept_no")
+    private Department department;
+    //学生的状态  学生状态0是在校1已毕业2休学3退学
     private Integer studentStatus;
     //private Date studentDate;
 

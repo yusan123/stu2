@@ -1,0 +1,6 @@
+127.0.0.1 - - [08/Aug/2018:00:00:17 +0800] "GET /index.html HTTP/1.1" 200 1924 http-bio-9107-exec-4 7
+127.0.0.1 - - [08/Aug/2018:00:00:17 +0800] "GET /bootstrap/css/bootstrap-theme.min.css HTTP/1.1" 200 23357 http-bio-9107-exec-6 2
+127.0.0.1 - - [08/Aug/2018:00:00:17 +0800] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 200 122540 http-bio-9107-exec-1 5
+127.0.0.1 - - [08/Aug/2018:00:00:17 +0800] "GET /bootstrap/js/jquery-1.11.3.min.js HTTP/1.1" 200 95957 http-bio-9107-exec-2 3
+127.0.0.1 - - [08/Aug/2018:00:00:17 +0800] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 200 36816 http-bio-9107-exec-1 2
+127.0.0.1 - - [08/Aug/2018:00:00:17 +0800] "GET /js/angular.js HTTP/1.1" 200 1187559 http-bio-9107-exec-1 14

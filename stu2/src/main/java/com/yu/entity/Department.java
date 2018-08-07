@@ -1,10 +1,14 @@
 package com.yu.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yu on 2018/8/4 23:05.
@@ -22,5 +26,9 @@ public class Department {
     @GeneratedValue
     private Integer deptId;
     private String deptName;
+    @JsonIgnore
+    @OneToMany(targetEntity = Student.class,mappedBy = "department")
+    //不存在级联操作，不会存在新增学生新增学院或者专业
+    private Set<Student> students = new HashSet<>();
 
 }
