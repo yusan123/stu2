@@ -18,4 +18,6 @@ public interface StudentService {
     Student save(Student student);
     //根据id删除
     void delete(Integer id);
+    //根据id返回一个学生的年龄
+    Integer getAgeById(Integer id) throws RuntimeException;
 }
