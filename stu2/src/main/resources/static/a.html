@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>angularJS ��һ������ ���ʽ</title>
+		<title>angularJS 基本案例</title>
 		<script src="/js/angular.min.js"></script>
 		<script type='text/javascript'>
 			var app = angular.module("myApp",[]);
 			app.controller("myCtrl",function($scope){
 				
 				$scope.students=[
-					{name:'Ԥ��1',math:88,chinese:9,english:156},
-					{name:'Ԥ��2',math:388,chinese:99,english:526},
-					{name:'Ԥ��3',math:88,chinese:199,english:56},
-					{name:'Ԥ��4',math:288,chinese:99,english:56}
+					{name:'1',math:88,chinese:9,english:156},
+					{name:'2',math:388,chinese:99,english:526},
+					{name:'3',math:88,chinese:199,english:56},
+					{name:'4',math:288,chinese:99,english:56}
 				];
 			
-			});
+			});s
 		
 		</script>
 	</head>
 	<body ng-app="myApp" ng-controller="myCtrl">
 		<table border="1">
 			<tr>
-				<td>���</td>
-				<td>����</td>
-				<td>��ѧ�ɼ�</td>
-				<td>���ĳɼ�</td>
-				<td>Ӣ��ɼ�</td>
-				<td>�ܳɼ�</td>
-				<td>ƽ���ɼ�</td>
+				<td>编号</td>
+				<td>姓名</td>
+				<td>数学</td>
+				<td>语文</td>
+				<td>英语</td>
+				<td>总分</td>
+				<td>平均分</td>
 			</tr>
 			<tr ng-repeat='s in students'>
 				<td>{{$index+1}}</td>

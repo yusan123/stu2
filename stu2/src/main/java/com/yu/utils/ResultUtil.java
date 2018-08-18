@@ -23,11 +23,10 @@ public class ResultUtil {
     }
 
     //异常
-    public static ResultVO error(){
+    public static ResultVO error(Integer code,String msg){
         ResultVO<Object> resultVO = new ResultVO<>();
-        resultVO.setCode(ResultEnum.ERROR.getCode());
-        resultVO.setMsg(ResultEnum.ERROR.getMsg());
-        resultVO.setData(null);
+        resultVO.setCode(code);
+        resultVO.setMsg(msg);
         return resultVO;
     }
 
