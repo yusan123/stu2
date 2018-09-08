@@ -8,16 +8,8 @@ import java.util.List;
  * Created by yu on 2018/8/4 23:36.
  */
 public interface StudentService {
-    //不分页查询所有
+    //不分页查询
     List<Student> findAllStudent();
-    //根据id查询一个
-    Student findById(Integer id);
-    //根据学生学号查询学生信息
-    Student findByStudentNo(Integer no);
-    //新增
-    Student save(Student student);
-    //根据id删除
-    void delete(Integer id);
-    //根据id返回一个学生的年龄
-    Integer getAgeById(Integer id) throws RuntimeException;
+
+    List<Student> findPageByAgeDesc(Integer currPage,Integer pageSize);
 }

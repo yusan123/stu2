@@ -22,10 +22,4 @@ public class SubjectController {
         return subjectService.findAll();
     }
 
-    @GetMapping("/{deptNo}")
-    public Object findByDeptNo(@PathVariable Integer deptNo){
-        log.info("depNo={}",deptNo);
-        return subjectService.findByDeptNo(deptNo);
-    }
-
 }

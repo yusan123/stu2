@@ -11,5 +11,4 @@ import java.util.List;
 
 public interface SubjectService {
     List<Subject> findAll();
-    List<Subject> findByDeptNo(Integer no);
 }
