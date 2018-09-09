@@ -9,6 +9,7 @@ import com.yu.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 //*
@@ -30,6 +31,14 @@ public class StudentController {
     public Object findAll(Map<String, Object> map) {
         map.put("res", studentService.findAllStudent());
         return ResultUtil.success(studentService.findAllStudent());
+    }
+
+    @GetMapping("/{pageNo}/{pageSize}")
+    public Object findPageByAgeDesc(@PathVariable Integer pageNo,
+                                    @PathVariable Integer pageSize ){
+        List<Student> studentList = studentService.findPageByAgeDesc(pageNo, pageSize);
+        studentList.forEach(System.out::println);
+        return ResultUtil.success(studentList);
     }
 
 

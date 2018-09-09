@@ -44,7 +44,7 @@ public class DepartmentMapperTest extends StuApplicationTests{
     @Test
     public void selectByExample() throws Exception {
         DepartmentExample departmentExample =new DepartmentExample();
-        DepartmentExample.Criteria criteria = departmentExample.createCriteria().andDeptIdGreaterThan(2);
+        DepartmentExample.Criteria criteria = departmentExample.createCriteria().andDeptIdGreaterThan(5);
         List<Department> list = departmentMapper.selectByExample(departmentExample);
         list.forEach(System.out::println);
     }

@@ -9,4 +9,11 @@ server:
   port: 8080
 mybatis:
   type-aliases-package: com.yu.entity
-  mapper-locations: classpath:mybatis-mapper/*.xml
+#  mapper-locations: classpath:mybatis-mapper/*.xml
+
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

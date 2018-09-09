@@ -1,0 +1,2 @@
+1.项目目录下运行命令： mvn mybatis-generator:generate -e
+2.IDEA 运行方式，maven /parameters/command line/mybatis-generator:generate -e

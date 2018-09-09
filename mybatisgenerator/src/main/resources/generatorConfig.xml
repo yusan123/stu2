@@ -39,7 +39,7 @@
             <property name="enableSubPackages" value="false"/>
 
             <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
-            <property name="immutable" value="true"/>
+            <property name="immutable" value="false"/>
 
             <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
             <property name="trimStrings" value="true"/>
@@ -56,7 +56,7 @@
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <javaClientGenerator targetPackage="com.yu.mapper" targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.yu.mapper" targetProject="src/main/java" type="ANNOTATEDMAPPER">
             <property name="enableSubPackages" value=""/>
             <!--
                     定义Maper.java 源代码中的ByExample() 方法的可视性，可选的值有：
