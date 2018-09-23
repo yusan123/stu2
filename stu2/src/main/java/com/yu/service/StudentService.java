@@ -10,6 +10,9 @@ import java.util.List;
 public interface StudentService {
     //不分页查询所有
     List<Student> findAllStudent();
+
+    //分页查询学生
+    List<Student> findByPage(Integer pageNo,Integer pageSize);
     //根据id查询一个
     Student findById(Integer id);
     //根据学生学号查询学生信息

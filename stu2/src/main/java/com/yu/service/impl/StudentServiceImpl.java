@@ -6,6 +6,10 @@ import com.yu.exception.StudentException;
 import com.yu.repository.StudentRepository;
 import com.yu.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,6 +40,24 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student findByStudentNo(Integer no) {
         return studentRepository.findByStudentNo(no);
+    }
+
+    /**
+     * 使用jpa 2.0的分页排序查询
+     * @param pageNo  页码
+     * @param pageSize 每页显示的大小
+     * @return
+     */
+    @Override
+    public List<Student> findByPage(Integer pageNo, Integer pageSize) {
+        /*// 过时的写法
+        return studentRepository.findAll(new PageRequest(pageNo-1,pageSize)).getContent();*/
+
+
+        PageRequest of = PageRequest.of(pageNo-1, pageSize,new Sort(Sort.Direction.DESC,"studentAge"));
+        Page<Student> studentPage = studentRepository.findAll(of);
+        //studentPage.getContent().forEach(System.out::println);   //这行代码会导致循环引用，栈内存溢出
+        return studentPage.getContent();
     }
 
     /**

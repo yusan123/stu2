@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ResponseBody
 public class StudentExceptionHandler {
 
-    @ResponseBody
     @ExceptionHandler(Exception.class)
     public ResultVO handler(Exception e) {
         if(e instanceof StudentException){
